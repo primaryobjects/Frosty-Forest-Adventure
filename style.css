@@ -1,0 +1,46 @@
+body {
+    overflow: hidden;
+    position: relative;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+#controls {
+    position: absolute;
+    bottom: 15%;
+    left: 15%;
+    z-index: 1;
+  }
+
+button {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1); /* change the color and opacity as desired */
+    color: white;
+    font-size: 30px;
+}
+
+#up-arrow, #down-arrow {
+    margin-left: 70px;
+}
+
+#container {
+    position: relative;
+}
+
+#score {
+    font-size: 60px;
+    color: purple;
+    font-weight: bold;
+    font-family: fantasy;
+    text-align: center;
+}
+
+#start {
+    width: 100px;
+    height: 60px;
+}
