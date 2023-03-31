@@ -80,10 +80,10 @@ $(function() {
 
   // Create an audio element to play the sound effect
   const scoreSound = new Howl({
-    src: ['Cork.mp3'], autoplay: true, loop: false
+    src: ['sounds/Cork.mp3'], autoplay: true, loop: false
   });
   const windSound = new Howl({
-    src: ['wind01.mp3'], autoplay: true, loop: true
+    src: ['sounds/wind01.mp3'], autoplay: true, loop: true
   });
   windSound.play();
 
