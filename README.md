@@ -1,7 +1,7 @@
 Frosty Forest Adventure
 =======================
 
-A 3D web-based game developed by ChatGPT4.
+A 3D web-based game developed with ChatGPT4.
 
 Move your heroine to collect all of the treasure. Drag the mouse to rotate the camera view.
 
