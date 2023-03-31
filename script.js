@@ -79,7 +79,9 @@ $(function() {
   scene.add(scoreText);*/
 
   // Create an audio element to play the sound effect
-  const scoreSound = new Audio('sounds/Cork.mp3');
+  const scoreSound = new Howl({
+    src: ['sounds/Cork.mp3'], autoplay: true, loop: false
+  });
   const windSound = new Howl({
     src: ['sounds/wind01.mp3'], autoplay: true, loop: true
   });
@@ -178,5 +180,62 @@ $(function() {
       renderer.render(scene, camera);
   }
 
+  const leftArrow = document.getElementById('left-arrow');
+  const rightArrow = document.getElementById('right-arrow');
+  const upArrow = document.getElementById('up-arrow');
+  const downArrow = document.getElementById('down-arrow');
+
+  leftArrow.addEventListener('touchstart', () => {
+    keys['ArrowLeft'] = true;
+  });
+  leftArrow.addEventListener('touchend', () => {
+    keys['ArrowLeft'] = false;
+  });
+  leftArrow.addEventListener('mousedown', () => {
+    keys['ArrowLeft'] = true;
+  });
+  leftArrow.addEventListener('mouseup', () => {
+    keys['ArrowLeft'] = false;
+  });
+
+  rightArrow.addEventListener('touchstart', () => {
+    keys['ArrowRight'] = true;
+  });
+  rightArrow.addEventListener('touchend', () => {
+    keys['ArrowRight'] = false;
+  });
+  rightArrow.addEventListener('mousedown', () => {
+    keys['ArrowRight'] = true;
+  });
+  rightArrow.addEventListener('mouseup', () => {
+    keys['ArrowRight'] = false;
+  });
+
+  upArrow.addEventListener('touchstart', () => {
+    keys['ArrowUp'] = true;
+  });
+  upArrow.addEventListener('touchend', () => {
+    keys['ArrowUp'] = false;
+  });
+  upArrow.addEventListener('mousedown', () => {
+    keys['ArrowUp'] = true;
+  });
+  upArrow.addEventListener('mouseup', () => {
+    keys['ArrowUp'] = false;
+  });
+
+  downArrow.addEventListener('touchstart', () => {
+    keys['ArrowDown'] = true;
+  });
+  downArrow.addEventListener('touchend', () => {
+    keys['ArrowDown'] = false;
+  });
+  downArrow.addEventListener('mousedown', () => {
+    keys['ArrowDown'] = true;
+  });
+  downArrow.addEventListener('mouseup', () => {
+    keys['ArrowDown'] = false;
+  });
+  
   animate();
 });
