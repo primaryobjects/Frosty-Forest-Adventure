@@ -7,7 +7,7 @@ Move your heroine to collect all of the treasure. Drag the mosue to rotate the c
 
 *Created by ChatGPT4 in less than 20 prompts. Images created by StableDiffusion.*
 
-[Demo](https://frosty-forest-adventure.primaryobjects.repl.co/)
+[Play Online](https://frosty-forest-adventure.primaryobjects.repl.co/)
 
 ## Screenshots
 
