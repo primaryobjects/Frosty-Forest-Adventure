@@ -8,7 +8,7 @@ $(function() {
 
   // Create the ground
   const loader = new THREE.TextureLoader();
-  const groundTexture = loader.load('images/snow.jpg');
+  const groundTexture = loader.load('snow.jpg');
   const groundGeometry = new THREE.PlaneGeometry(10, 10);
   const groundMaterial = new THREE.MeshBasicMaterial({map: groundTexture});
   const ground = new THREE.Mesh(groundGeometry, groundMaterial);
@@ -16,7 +16,7 @@ $(function() {
   scene.add(ground);
 
   // Load the texture
-  const treeTextures = [ loader.load('images/tree3.png'), loader.load('images/tree4.png'), loader.load('images/tree5.png') ];
+  const treeTextures = [ loader.load('tree3.png'), loader.load('tree4.png'), loader.load('tree5.png') ];
 
   // Create the tree material with the texture
   const treeGeometry = new THREE.BoxGeometry(1, 3, 0);
@@ -34,7 +34,7 @@ $(function() {
   }
 
   // Create the rock geometry and material
-  const rockTextures = [ loader.load('images/rock1.jpg'), loader.load('images/rock2.jpg'), loader.load('images/rock3.jpg'), loader.load('images/rock4.png') ];
+  const rockTextures = [ loader.load('rock1.jpg'), loader.load('rock2.jpg'), loader.load('rock3.jpg'), loader.load('rock4.png') ];
   const rockGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
 
   // Create a function to add a row of rocks along one side of the ground
@@ -58,7 +58,7 @@ $(function() {
   }
 
   // Create the treasure geometry and material
-  const treasureTexture = loader.load('images/treasure.png');
+  const treasureTexture = loader.load('treasure.png');
   const treasureGeometry = new THREE.BoxGeometry(0.75, 0.5, 0);
   const treasureMaterial = new THREE.MeshBasicMaterial({map: treasureTexture, transparent: true});
 
@@ -79,9 +79,11 @@ $(function() {
   scene.add(scoreText);*/
 
   // Create an audio element to play the sound effect
-  const scoreSound = new Audio('sounds/Cork.mp3');
+  const scoreSound = new Howl({
+    src: ['Cork.mp3'], autoplay: true, loop: false
+  });
   const windSound = new Howl({
-    src: ['sounds/wind01.mp3'], autoplay: true, loop: true
+    src: ['wind01.mp3'], autoplay: true, loop: true
   });
   windSound.play();
 
@@ -90,7 +92,7 @@ $(function() {
   camera.lookAt(new THREE.Vector3(0, 0, 0));
 
   // Create the player
-  const playerTexture = loader.load('images/hero.png');
+  const playerTexture = loader.load('hero.png');
   const playerGeometry = new THREE.BoxGeometry(0.5, 1, 0);
   const playerMaterial = new THREE.MeshBasicMaterial({map: playerTexture, transparent: true});
   const player = new THREE.Mesh(playerGeometry, playerMaterial);
@@ -178,5 +180,62 @@ $(function() {
       renderer.render(scene, camera);
   }
 
+  const leftArrow = document.getElementById('left-arrow');
+  const rightArrow = document.getElementById('right-arrow');
+  const upArrow = document.getElementById('up-arrow');
+  const downArrow = document.getElementById('down-arrow');
+
+  leftArrow.addEventListener('touchstart', () => {
+    keys['ArrowLeft'] = true;
+  });
+  leftArrow.addEventListener('touchend', () => {
+    keys['ArrowLeft'] = false;
+  });
+  leftArrow.addEventListener('mousedown', () => {
+    keys['ArrowLeft'] = true;
+  });
+  leftArrow.addEventListener('mouseup', () => {
+    keys['ArrowLeft'] = false;
+  });
+
+  rightArrow.addEventListener('touchstart', () => {
+    keys['ArrowRight'] = true;
+  });
+  rightArrow.addEventListener('touchend', () => {
+    keys['ArrowRight'] = false;
+  });
+  rightArrow.addEventListener('mousedown', () => {
+    keys['ArrowRight'] = true;
+  });
+  rightArrow.addEventListener('mouseup', () => {
+    keys['ArrowRight'] = false;
+  });
+
+  upArrow.addEventListener('touchstart', () => {
+    keys['ArrowUp'] = true;
+  });
+  upArrow.addEventListener('touchend', () => {
+    keys['ArrowUp'] = false;
+  });
+  upArrow.addEventListener('mousedown', () => {
+    keys['ArrowUp'] = true;
+  });
+  upArrow.addEventListener('mouseup', () => {
+    keys['ArrowUp'] = false;
+  });
+
+  downArrow.addEventListener('touchstart', () => {
+    keys['ArrowDown'] = true;
+  });
+  downArrow.addEventListener('touchend', () => {
+    keys['ArrowDown'] = false;
+  });
+  downArrow.addEventListener('mousedown', () => {
+    keys['ArrowDown'] = true;
+  });
+  downArrow.addEventListener('mouseup', () => {
+    keys['ArrowDown'] = false;
+  });
+  
   animate();
 });
