@@ -12,3 +12,11 @@ Move your heroine to collect all of the treasure. Drag the mouse to rotate the c
 ## Screenshots
 
 ![Frosty-Forest-Adventure](screenshots/screenshot.gif)
+
+## License
+
+MIT
+
+## Author
+
+Kory Becker http://www.primaryobjects.com/kory-becker
